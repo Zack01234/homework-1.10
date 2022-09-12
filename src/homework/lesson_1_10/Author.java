@@ -23,4 +23,8 @@ public class Author {
     public String toString() {
         return "Автор - " + middleName + " " + name + " " + surName;
     }
+    public boolean equals(String name, String surName, String middleName) {
+        name.equals(surName);
+        return false;
+    }
 }

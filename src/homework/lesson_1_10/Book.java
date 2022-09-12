@@ -29,4 +29,12 @@ public class Book {
     public String toString() {
         return "Книга - " + title + ", Дата публикации - " + publishDate + ", " + author;
     }
+
+
+    public boolean equals(int publishDate) {
+        if (publishDate <= 1800 || publishDate >= 2250) {
+            System.out.println("Перепроверьте данные");
+        }
+        return false;
+    }
 }
