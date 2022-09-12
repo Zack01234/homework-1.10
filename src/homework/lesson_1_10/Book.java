@@ -1,5 +1,7 @@
 package homework.lesson_1_10;
 
+import java.util.Objects;
+
 public class Book {
 
     private String title;
@@ -30,11 +32,16 @@ public class Book {
         return "Книга - " + title + ", Дата публикации - " + publishDate + ", " + author;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishDate == book.publishDate && title.equals(book.title) && author.equals(book.author);
+    }
 
-    public boolean equals(int publishDate) {
-        if (publishDate <= 1800 || publishDate >= 2250) {
-            System.out.println("Перепроверьте данные");
-        }
-        return false;
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, publishDate, author);
     }
 }
